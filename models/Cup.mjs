@@ -7,7 +7,7 @@ const cupSchema = new mongoose.Schema({
     price: { type: String, required: true },
     material: { type: String, required: true },
     image_url: { type: String },
-    manufactured_year: { type: Number, required: true },
+    manufactured_year: { type: Number, required: true, min: 1900, max: new Date().getFullYear() },
     is_available: { type: Boolean, default: true },
 });
 
