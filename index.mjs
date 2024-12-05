@@ -10,12 +10,17 @@ const app = express();
 
 import bodyParser from "body-parser";
 import cupRoutes from "./routes/cupRoutes.mjs";
+import materialRoutes from "./routes/materialRoutes.mjs";
+import reviewRoutes from "./routes/reviewRoutes.mjs";
 
 app.use(express.json());
 app.use(bodyParser.json());
 
 // Routes
 app.use('/api/cups', cupRoutes);
+app.use('/api/materials', materialRoutes);
+app.use('/api/reviews', reviewRoutes);
+
 
 // Connect to MongoDB
 await mongoose.connect(process.env.MONGO_URI)

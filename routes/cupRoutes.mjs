@@ -1,10 +1,30 @@
 import express from 'express';
 const router = express.Router();
 import Cup from "../models/Cup.mjs";
+import { cups } from "../data/cups.mjs";
 
 // Define routes here
 
 //routes/cupRoutes.js: Create an Express router. This file is empty except for the structure:
+
+
+// creating function to post insert data to the collection
+async function insertCupData () {
+    const existingCups = await Cup.countDocuments();
+    if (existingCups > 0) {
+        console.log ("Cups are already here, so not inserting now.")
+        return;
+    }
+    else {
+    const result = await Cup.insertMany(cups);
+    console.log(`${result.length} cups have been inserted successfully.`);
+    }
+}
+
+if (process.env.NODE_ENV !== "production") {
+    insertCupData();
+}
+
 
 // /api/cups/
 router.post("/", async (req, res) => {

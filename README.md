@@ -34,6 +34,11 @@ Create MongoDB indexes.
 * npm i --save-dev nodemon (to install nodemon dependency package)
 * npm install express (to install Express)
 * npm start OR nodemon index.js (to start the browser)
+* to post new data in cups router, use /api/cups/
+* to retrieve all cups, use /api/cups/ 
+* to retrieve a cup info by its id, use /api/cups/:id
+* similarly to update or to delet a cup details by its id, use /api/cups/:id
+
 
 
 ## Help

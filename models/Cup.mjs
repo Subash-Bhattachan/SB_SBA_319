@@ -3,13 +3,14 @@ import mongoose from "mongoose";
 
 const cupSchema = new mongoose.Schema({
     brand_name: { type: String, required: true },
-    capacity: { type: String, required: true },
-    price: { type: String, required: true },
+    capacity_in_oz: { type: Number, min: 50, max: 1000 }, // unit is mentioned in key
+    price_in_dollars: { type: Number, max: 150 }, // unit is mentioned in key
     material: { type: String, required: true },
-    image_url: { type: String },
     manufactured_year: { type: Number, required: true, min: 1900, max: new Date().getFullYear() },
     is_available: { type: Boolean, default: true },
 });
+
+
 
 let Cup = mongoose.model('Cup', cupSchema);
 
