@@ -1,8 +1,16 @@
 import mongoose from "mongoose";
 
 const materialSchema = new mongoose.Schema({
-    material: { type: String, required: true },
-    body: { type: String, required: true, maxLength: 1000 }, 
+    material: { 
+        type: String, 
+        required: true 
+    },
+    
+    body: { 
+        type: String, 
+        required: true, 
+        maxLength: 1000 
+    }, 
 
 });
 materialSchema.index({ material: 1 });

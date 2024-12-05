@@ -31,10 +31,9 @@ router.post("/", async (req, res) => {
     try {
         const cup = {
             brand_name: req.body.brand_name,
-            capacity: req.body.capacity,
-            price: req.body.price,
+            capacity_in_oz: req.body.capacity_in_oz,
+            price_in_dollars: req.body.price_in_dollars,
             material: req.body.material,
-            image_url: req.body.image_url,
             manufactured_year: req.body.manufactured_year
         };
 
