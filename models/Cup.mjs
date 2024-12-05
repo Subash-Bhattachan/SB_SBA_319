@@ -45,7 +45,10 @@ const cupSchema = new mongoose.Schema({
         max: new Date().getFullYear()
     },
 
-    is_available: { type: Boolean, default: true },
+    is_available: { 
+        type: Boolean, 
+        default: true 
+    },
 });
 
 
